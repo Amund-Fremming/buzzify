@@ -1,5 +1,5 @@
 ﻿namespace Core.src.Features.Spin;
 
-public class SpinService(ILogger<SpinService> logger)
+public class SpinService(ILogger<SpinService> logger) : ISpinService
 {
 }
