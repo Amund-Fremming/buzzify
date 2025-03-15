@@ -1,7 +1,9 @@
 ﻿namespace Core.src.Features.Spin;
 
-public interface ISpinService
+public interface ISpinGameManager
 {
+    public void Test();
+
     // start game
     // update state
     // next round

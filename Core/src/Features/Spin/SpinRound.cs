@@ -1,8 +1,8 @@
-﻿using Core.src.Shared.Abstractions;
+﻿using Core.src.Shared.TypeScript;
 
 namespace Core.src.Features.Spin;
 
-public record SpinRound : IIdentity, ITypeScriptModel
+public record SpinRound : ITypeScriptModel
 {
     public int Id { get; set; }
 }

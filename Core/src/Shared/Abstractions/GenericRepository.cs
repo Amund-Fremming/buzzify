@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Core.src.Shared.Abstractions;
 
-public abstract class RepositoryBase<T>(ILogger<RepositoryBase<T>> logger, AppDbContext context) : IRepositoryBase<T> where T : class
+public class GenericRepository(AppDbContext context) : IGenericRepository
 {
-    public async Task<Result<T>> GetById(int id)
+    public async Task<Result<T>> GetById<T>(int id) where T : class
     {
         try
         {
@@ -22,12 +22,11 @@ public abstract class RepositoryBase<T>(ILogger<RepositoryBase<T>> logger, AppDb
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "GetById");
             return new Error(ex.Message, ex);
         }
     }
 
-    public async Task<Result<IEnumerable<T>>> GetAll()
+    public async Task<Result<IEnumerable<T>>> GetAll<T>() where T : class
     {
         try
         {
@@ -37,12 +36,11 @@ public abstract class RepositoryBase<T>(ILogger<RepositoryBase<T>> logger, AppDb
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "GetAll");
             return new Error(ex.Message, ex);
         }
     }
 
-    public async Task<Result> Create(T entity)
+    public async Task<Result> Create<T>(T entity) where T : class
     {
         try
         {
@@ -52,12 +50,11 @@ public abstract class RepositoryBase<T>(ILogger<RepositoryBase<T>> logger, AppDb
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Create");
-            throw;
+            return new Error(ex.Message, ex);
         }
     }
 
-    public async Task<Result> Update(T entity)
+    public async Task<Result> Update<T>(T entity) where T : class
     {
         try
         {
@@ -67,20 +64,21 @@ public abstract class RepositoryBase<T>(ILogger<RepositoryBase<T>> logger, AppDb
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Update");
             return new Error(ex.Message, ex);
         }
     }
 
-    public async Task<Result> Delete(int id)
+    public async Task<Result> Delete<T>(int id) where T : class
     {
         try
         {
-            var result = await GetById(id);
+            var result = await GetById<T>(id);
+
             if (result.IsError)
             {
                 return result.Error;
             }
+
             var entity = result.Data;
             context.Remove(entity);
             await context.SaveChangesAsync();
@@ -88,7 +86,6 @@ public abstract class RepositoryBase<T>(ILogger<RepositoryBase<T>> logger, AppDb
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Delete");
             return new Error(ex.Message, ex);
         }
     }

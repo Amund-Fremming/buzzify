@@ -1,4 +1,4 @@
-﻿using Core.src.Shared.Abstractions;
+﻿using Core.src.Shared.TypeScript;
 using System.Text.Json.Serialization;
 
 namespace Core.src.Features.Auth0;

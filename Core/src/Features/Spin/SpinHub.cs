@@ -1,5 +1,7 @@
-﻿namespace Core.src.Features.Spin;
+﻿using Microsoft.AspNetCore.SignalR;
 
-public class SpinHub
+namespace Core.src.Features.Spin;
+
+public class SpinHub : Hub
 {
 }

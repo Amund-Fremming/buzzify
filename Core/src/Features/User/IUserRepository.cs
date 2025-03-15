@@ -2,7 +2,7 @@
 
 namespace Core.src.Features.User;
 
-public interface IUserRepository : IRepository<UserEntity>
+public interface IUserRepository : IRepositoryBase<UserEntity>
 {
     // Add your specific methods here.
 }

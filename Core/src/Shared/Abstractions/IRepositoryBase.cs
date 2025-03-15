@@ -2,7 +2,7 @@
 
 namespace Core.src.Shared.Abstractions;
 
-public interface IRepository<T> where T : IIdentity
+public interface IRepositoryBase<T> where T : class
 {
     Task<Result<T>> GetById(int id);
 

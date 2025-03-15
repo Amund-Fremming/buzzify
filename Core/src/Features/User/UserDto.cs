@@ -1,4 +1,4 @@
-﻿using Core.src.Shared.Abstractions;
+﻿using Core.src.Shared.TypeScript;
 
 namespace Core.src.Features.User;
 

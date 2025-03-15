@@ -1,9 +1,9 @@
-﻿using Core.src.Shared.Abstractions;
+﻿using Core.src.Shared.TypeScript;
 using System.ComponentModel.DataAnnotations;
 
 namespace Core.src.Features.User;
 
-public class UserEntity : IIdentity, ITypeScriptModel
+public class UserEntity : ITypeScriptModel
 {
     [Key]
     public int Id { get; set; }

@@ -1,6 +1,4 @@
-﻿using Core.src.Shared.Abstractions;
-
-namespace Core.src.Shared.TypeScript;
+﻿namespace Core.src.Shared.TypeScript;
 
 public static class TypeScriptCommon
 {
