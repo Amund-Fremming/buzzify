@@ -4,9 +4,17 @@ namespace Core.src.Features.Spin;
 
 public class SpinGameManager(IGenericRepository genericRepository) : ISpinGameManager
 {
-    public void Test()
+    public async Task Test()
     {
-        genericRepository.Create(new SpinHub() { });
-        genericRepository.Create(new SpinGame() { });
+        await genericRepository.Create(new SpinGame() { });
+        await genericRepository.Create(new SpinGame() { });
+        await genericRepository.Create(new SpinGame() { });
+        await genericRepository.Create(new SpinGame() { });
+        await genericRepository.Create(new SpinGame() { });
+
+        var result = await genericRepository.GetAll<SpinGame>();
+        var all = result.Data;
+
+        Console.WriteLine();
     }
 }

@@ -1,7 +1,7 @@
 using Core.src.Features.Auth0;
 using Core.src.Features.Spin;
 using Core.src.Features.User;
-using Core.src.Infrastructure;
+using Core.src.Shared.AppData;
 using Core.src.Shared.Extensions;
 using Core.src.Shared.TypeScript;
 using Microsoft.EntityFrameworkCore;

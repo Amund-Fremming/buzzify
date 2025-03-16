@@ -5,29 +5,7 @@ namespace Core.src.Features.Spin;
 
 public class SpinGame : GameBase, ITypeScriptModel
 {
-    public int NumRounds { get; set; }
-
-    public override void EndGame()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void GetCurrentState()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void StartGame()
-    {
-        throw new NotImplementedException();
-    }
-
-    public override void UpdateState()
-    {
-        throw new NotImplementedException();
-    }
-
-    // players
-    // rounds
-    // scores
+    public int NumberOfRounds { get; set; }
+    public int CurrentRound { get; set; }
+    public SpinGameState State { get; set; }
 }

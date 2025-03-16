@@ -3,10 +3,11 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Core.src.Features.Spin;
 
-public record SpinRound : ITypeScriptModel
+public record SpinGamePlayer : ITypeScriptModel
 {
     [Key]
     public int Id { get; set; }
     public int GameId { get; set; }
-    public bool Completed { get; set; }
+    public int PlayerId { get; set; }
+    public bool IsActive { get; set; }
 }

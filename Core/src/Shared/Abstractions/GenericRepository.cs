@@ -1,4 +1,4 @@
-﻿using Core.src.Infrastructure;
+﻿using Core.src.Shared.AppData;
 using Core.src.Shared.ResultPattern;
 using Microsoft.EntityFrameworkCore;
 

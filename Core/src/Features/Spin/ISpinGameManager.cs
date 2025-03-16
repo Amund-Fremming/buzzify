@@ -2,8 +2,9 @@
 
 public interface ISpinGameManager
 {
-    public void Test();
+    Task Test();
 
+    // initialize game (opprett, hent all nødvendig data)
     // start game
     // update state
     // next round

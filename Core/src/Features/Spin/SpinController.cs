@@ -7,9 +7,9 @@ namespace Core.src.Features.Spin;
 public class SpinController(ISpinGameManager spinGameManager) : ControllerBase
 {
     [HttpGet]
-    public IActionResult Test()
+    public async Task<IActionResult> Test()
     {
-        spinGameManager.Test();
+        await spinGameManager.Test();
 
         return Ok("Test OK!");
     }
